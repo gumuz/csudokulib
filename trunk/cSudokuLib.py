@@ -6,7 +6,7 @@
 from ctypes import *
 
 try:
-    sudokulib = cdll.cSudokuLib
+    sudokulib = cdll.LoadLibrary('csudokulib.so')
 except Exception, e:
     print "Error loading cSudokuLib.dll"
     raise e
