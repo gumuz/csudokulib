@@ -1,9 +1,3 @@
-/* Replace "dll.h" with the name of your header */
-#include "dll.h"
-#include <windows.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 int isValid(int arr[], int pos) {
     // check if gives pos is valid in arr
 
@@ -60,7 +54,7 @@ int nextZero(int arr[]) {
     return -1;
 }
     
-DLLIMPORT int solveBrute(int arr[]) {
+int solveBrute(int arr[]) {
     int i, sol;
     
     int pos = nextZero(arr);
@@ -77,28 +71,4 @@ DLLIMPORT int solveBrute(int arr[]) {
     }
     arr[pos] = 0; // reset!
     return 0;
-}
-
-
-BOOL APIENTRY DllMain (HINSTANCE hInst ,
-                       DWORD reason,
-                       LPVOID reserved)
-{
-    switch (reason)
-    {
-      case DLL_PROCESS_ATTACH:
-        break;
-
-      case DLL_PROCESS_DETACH:
-        break;
-
-      case DLL_THREAD_ATTACH:
-        break;
-
-      case DLL_THREAD_DETACH:
-        break;
-    }
-
-    /* Returns TRUE on success, FALSE on failure */
-    return TRUE;
 }
